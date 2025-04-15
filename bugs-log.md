@@ -31,3 +31,37 @@ leo@pauls-mac-mini sample-player %
 I accidentally pressed enter after typing python before I could write my next argument. Due to this all command following that action was executed in the repl.
 
 ## Bug 2: error using `pyinstaller`
+
+ I'm trying to package my code into an executable. Trying to use `pyinstaller` a common package for this. `pip install` succeeds but I get this error when i try to run it:
+
+```bash
+leo@pauls-mac-mini sample-player % pyinstaller --onefile m
+ain.py
+zsh: command not found: pyinstaller
+```
+
+1. I ran activate again: `source venv/bin/activate`
+2. Then I reinstalled with `pip pyinstaller`
+3. I checked the version using `pyinstaller --version` and it dispayed 6.12.0 at this point it looks like its installed. 
+4. Then we ran the packaging command again
+
+That created a /dist folder with the executable in it. I run the executable and the print line opens
+ 
+ ## Bug 3: error trying to exit passowrd flow
+ 
+  I was attempting to create a exiting feature from the password screen.
+  When used user is prompted to, yes continue or no exit after a incorrect password input.
+  However, when option no was selected user was brought back to the password screen, regardless.
+
+  Source of problem: My if statement was wrong.
+
+  ```python
+  if response == "y" or "Y":
+  ```
+  
+  the first half of the if statement will be true if the response is "y" , but if its false it will read `or "Y"` as always true, because it is a non empty stirng
+  I should have had this:
+
+  ```python
+  if response == "y" or response == "Y":
+```

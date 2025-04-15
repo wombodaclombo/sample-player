@@ -20,6 +20,7 @@ python main.py
 
 ## Features 
 
+- prompt user for password
 - user is prompted for their username
 - the user is prompted to chooe from a list of previewable music genres 
 - when user selects genre 9 samples appear on screen, 
