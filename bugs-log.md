@@ -65,3 +65,32 @@ That created a /dist folder with the executable in it. I run the executable and 
   ```python
   if response == "y" or response == "Y":
 ```
+
+
+
+
+## Bug 4: error attempting to create a username feature
+
+```bash
+Access granted. Welcome to Soundboard!
+What is your Name?
+78834983489389398489498988989
+Please enter a valid username, ex. Jimbob15 (less than 20 characters)
+What is your Name?
+Jimmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmy
+Traceback (most recent call last):
+  File "/Users/leo/Dev/sample-player/main.py", line 48, in <module>
+    init()
+  File "/Users/leo/Dev/sample-player/main.py", line 8, in init
+    password_check()
+  File "/Users/leo/Dev/sample-player/main.py", line 20, in password_check
+    main_program()
+  File "/Users/leo/Dev/sample-player/main.py", line 11, in main_program
+    user_name()
+  File "/Users/leo/Dev/sample-player/main.py", line 46, in user_name
+    user_name()
+  File "/Users/leo/Dev/sample-player/main.py", line 42, in user_name
+    if username.isalnum() and not username.isdigit() and not username.length < 20:
+AttributeError: 'str' object has no attribute 'length'```
+
+I was checking username.length but turns out "username.length" is for java not python. Instead I should have used the "len" function

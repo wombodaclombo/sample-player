@@ -1,0 +1,21 @@
+{
+    "genres": {
+
+        "Country": {
+            "samples": [
+                {
+                    "name": "guitar",
+                    "file": "sounds/country/sample.wav"
+                }
+            ]
+        },
+        "HipHop": {
+            "samples": [
+                {
+                    "name": "snare",
+                    "file": "sounds/hiphop/sample.wav"
+                }
+            ]
+        }
+    }
+}
