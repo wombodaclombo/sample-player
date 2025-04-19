@@ -1,19 +1,170 @@
 {
     "genres": {
-
         "Country": {
             "samples": [
                 {
-                    "name": "guitar",
-                    "file": "sounds/country/sample.wav"
+                    "name": "",
+                    "file": "sounds/country/SC_IA_80_guitar_arpeg_garden_Cmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_85_guitar_arrangment_porch_low_Dmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_85_guitar_arrangment_porch_mids_Dmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_85_guitar_arrangment_porch_minimal_Dmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_90_guitar_accompaniment_planning_Dbmin.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_90_guitar_chords_bittersweet_Ebmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_100_guitar_arpeg_nostalgic_high_Bmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_105_guitar_chords_jersey_muted_Abmaj.wav"
+                },
+                {
+                    "name": "",
+                    "file": "sounds/country/SC_IA_140_guitar_muted_family_alt_Amaj.wav"
                 }
             ]
         },
         "HipHop": {
             "samples": [
                 {
-                    "name": "snare",
-                    "file": "sounds/hiphop/sample.wav"
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                }
+            ]
+        },
+        "LoFi": {
+            "samples": [
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                }
+            ]
+        },
+        "Pop": {
+            "samples": [
+                {
+                    "name": "",
+                    "file": ""
+                }
+            ]
+        },
+        "Soul": {
+            "samples": [
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
+                },
+                {
+                    "name": "",
+                    "file": ""
                 }
             ]
         }

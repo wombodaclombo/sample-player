@@ -1,6 +1,7 @@
 import json
 import os
 import platform
+import pygame
 
 username = "User"
 genres = []
@@ -74,5 +75,21 @@ def prompt_genre_select():
     else:
         print("Please choose a number 0-9")
         prompt_genre_select()
+
+def play_sample(path):
+    if not path or not os.path.exists(path): 
+        raise Exception("File sample does not exist!")
+    pygame.init()
+    pygame.mixer.init()
+    sound = pygame.mixer.Sound(path)
+    sound.play()
+
+# pygame.init()
+# pygame.mixer.init()
+# sound = pygame.mixer.Sound("accompany-guitar.wav")
+# sound.play
+
+# while pygame.mixer.get_busy():
+#     pygame.time.Clock().tick(10)
 
 init()

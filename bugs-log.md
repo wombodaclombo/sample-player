@@ -131,3 +131,16 @@ IndexError: list index out of range
 ```
 
 I fixed this by comparing against the list length instead of a number so we never go out of range.
+
+
+## Bug 8:pygame import confused interpreter
+
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pygame
+  Downloading pygame-2.6.1-cp39-cp39-macosx_11_0_arm64.whl.metadata (12 kB)
+Downloading pygame-2.6.1-cp39-cp39-macosx_11_0_arm64.whl (12.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 5.3 MB/s eta 0:00:00
+Installing collected packages: pygame
+Successfully installed pygame-2.6.1
+
+I fixed this problem by switiching interpreter views to hopefully reload and give the interpreter a chance to understand the code
