@@ -91,6 +91,43 @@ Traceback (most recent call last):
     user_name()
   File "/Users/leo/Dev/sample-player/main.py", line 42, in user_name
     if username.isalnum() and not username.isdigit() and not username.length < 20:
-AttributeError: 'str' object has no attribute 'length'```
+AttributeError: 'str' object has no attribute 'length'
+```
 
-I was checking username.length but turns out "username.length" is for java not python. Instead I should have used the "len" function
+I was checking username.length but turns out `username.length` is for java not python. Instead I should have used the `len()` function.
+
+## Bug 5: error while opening json file
+
+``` bash
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/leo/Dev/sample-player/sounds/main.py': [Errno 2] No such file or directory
+leo@pauls-mac-mini sounds % python3 main.py
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/leo/Dev/sample-player/sounds/main.py': [Errno 2] No such file or directory
+```
+
+I was trying to open json file containing sound data, and received the error above. Turns out I was in the "sounds" directory not the "main" directory.
+
+
+## Bug 6: error while summoning genres file
+
+I was recivein an error that syas it couldn't find the genres property on my python dictionary loaded from json object. accessed the property with a `data.get` instead
+
+## Bug 7: index out of range error selecting a genre
+
+When I tried to set the active genre based on the number of the genre, I get this error if I choose a number greater than the number of genres in the list.
+
+```bash
+Traceback (most recent call last):
+  File "/Users/leo/Dev/sample-player/main.py", line 75, in <module>
+    init()
+  File "/Users/leo/Dev/sample-player/main.py", line 11, in init
+    password_check()
+  File "/Users/leo/Dev/sample-player/main.py", line 39, in password_check
+    main_program()
+  File "/Users/leo/Dev/sample-player/main.py", line 16, in main_program
+    prompt_genre_select()
+  File "/Users/leo/Dev/sample-player/main.py", line 70, in prompt_genre_select
+    active_genre = genres[int(genre_selection)]
+IndexError: list index out of range
+```
+
+I fixed this by comparing against the list length instead of a number so we never go out of range.
