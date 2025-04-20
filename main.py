@@ -7,38 +7,43 @@ username = "User"
 genres = []
 active_genre = None
 
+
 def init():
-    print("Welcome to Sample Player")
+    '''Welcomes the user and initiates the password check.'''
+    print("Welcome to Sample Player!")
     password_check()
 
 def main_program():
+   '''Calls other functions to control the flow of the total program.'''
    global active_genre
    user_name()
    load_genres()
    prompt_genre_select()
-   prompt_sample_select(active_genre)
+   print("Thank you for using SamplePlayer \n Goodbye")
 
 
 def load_genres():
+    '''loads genre information from jsn file which contains genre data'''
     global genres
     try:
         with open('genres.json', 'r') as file:
             data = json.load(file)
             genres = data.get("genres", [])
-            print("Here are the genres you can preview:\n")
-            for i, genre in enumerate(genres):
-                print(f"{i}: {genre['name']}")
+            
     except FileNotFoundError:
         print("File not found.")
     except json.JSONDecodeError:
         print("Invalid Json.")
 
 def password_check():
+    '''Asks user for password, if user enters incorrect password user is 
+    prompted to try again, is correct password in entred user is granted access to SamplePlayer'''
     password = "Soundboard"
     user_input = input("Enter the password:\n")
 
     if user_input == password:
         clear_console()
+        
         print("Access granted. Welcome to Soundboard!\nIn this program you can choose a genre and play sounds related to that genre.")
 
         main_program()
@@ -62,43 +67,62 @@ def end_program():
     print("Exiting program")
 
 def user_name():
+    '''prompts user for username'''
     username = input("What is your Name?\n")
+    clear_console()
     if username.isalnum() and not username.isdigit() and not len(username) > 20:
-        print(username + "'s Soundboard")
+        print("|***** " +username + "'s Soundboard *****|\n")
     else:
         print("Please enter a valid username, ex. Jimbob15 (less than 20 characters)")
         user_name()
 
 def prompt_genre_select():
+    '''Asks user to select genre and draws data from genres.json.'''
     global genres, active_genre
-    genre_selection = input("What would you like to listen to? (Enter a genre number): ")
-    
-    if genre_selection.isdigit() and int(genre_selection) < len(genres):
-        active_genre = genres[int(genre_selection)]
-    else:
-        print("Invalid selection. Try again.")
-        prompt_genre_select()
+    while True:
+        genre_selection = input("What would you like to listen to? (Enter a genre number or 'exit' to exit): ")
+        print("Here are the genres you can preview:\n")
+        for i, genre in enumerate(genres):
+            print(f"{i}: {genre['name']}")
+        clear_console()
+        if genre_selection == "exit":
+            break
+        if genre_selection.isdigit() and int(genre_selection) < len(genres):
+            active_genre = genres[int(genre_selection)]
+        else:
+            print("Invalid selection. Try again.")
+        prompt_sample_select(active_genre)
 
 def prompt_sample_select(genre):
+    '''Prompts the user to select a sample for the specified genre.
+    The user continues to be prompted to select samples to play until they type exit.'''
     if not genre:
         raise Exception("Genre doesn't exist.")
-    for index, sample in enumerate(genre["samples"]):
-        print(f"{index} {sample['name']}")
+    while True:
+        print("Please select a sample number:\n")
+        for index, sample in enumerate(genre["samples"]):
+            print(f"{index} {sample['name']}")
+        selection = input("\nYour selection (or type exit to quit): ")
+        if selection == "exit":
+            print("\nExiting...")
+            break
+        if not selection.isdigit():
+            raise Exception("No sample here!\n")
+        index = int(selection)
+        samples = genre.get("samples")
+        path = samples[index].get("file")
+        play_sample(path)
 
 def play_sample(path):
+    '''Plays the sample at the specified path if it exists. Playback cannot be interrupted.'''
     if not path or not os.path.exists(path): 
         raise Exception("File sample does not exist!")
     pygame.init()
     pygame.mixer.init()
     sound = pygame.mixer.Sound(path)
     sound.play()
-
-# pygame.init()
-# pygame.mixer.init()
-# sound = pygame.mixer.Sound("accompany-guitar.wav")
-# sound.play
-
-# while pygame.mixer.get_busy():
-#     pygame.time.Clock().tick(10)
+    print("\nPlaying sample...\n")
+    while pygame.mixer.get_busy():
+        pygame.time.Clock().tick(10)
 
 init()
