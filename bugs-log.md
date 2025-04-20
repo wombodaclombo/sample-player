@@ -153,3 +153,27 @@ I didnt mark the "genres" variable as global in some functions. because i did no
 ```python
 global genres
 ``` 
+
+## Bug 10: 
+
+```python
+What would you like to listen to? (Enter a genre number)4
+Traceback (most recent call last):
+  File "/Users/leo/Dev/sample-player/main.py", line 104, in <module>
+    init()
+  File "/Users/leo/Dev/sample-player/main.py", line 12, in init
+    password_check()
+  File "/Users/leo/Dev/sample-player/main.py", line 44, in password_check
+    main_program()
+  File "/Users/leo/Dev/sample-player/main.py", line 19, in main_program
+    prompt_sample_select(active_genre)
+  File "/Users/leo/Dev/sample-player/main.py", line 85, in prompt_sample_select
+    for index, sample in enumerate(genre["samples"]):
+TypeError: string indices must be integers
+```
+
+I was trying to display a list of genres. I was working on my genres list when i input this code 
+```python
+genres = list(data.get("genres"))
+```
+but it gave me a list of genre string names inteased of a list of genre objects. To fix it we removed the wrapping list function.

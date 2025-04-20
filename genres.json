@@ -1,172 +1,217 @@
 {
-    "genres": {
-        "Country": {
+    "genres": [
+        {
+            "name": "Country",
             "samples": [
                 {
-                    "name": "",
+                    "name": "Guitar arpeggio (C major)",
                     "file": "sounds/country/SC_IA_80_guitar_arpeg_garden_Cmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Guitar porch (D major)",
                     "file": "sounds/country/SC_IA_85_guitar_arrangment_porch_low_Dmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Guitar porch mids (D major)",
                     "file": "sounds/country/SC_IA_85_guitar_arrangment_porch_mids_Dmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Guitar mini (D major)",
                     "file": "sounds/country/SC_IA_85_guitar_arrangment_porch_minimal_Dmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Guitar plan (Dbmin)",
                     "file": "sounds/country/SC_IA_90_guitar_accompaniment_planning_Dbmin.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Bittersweet Guitar (E major)",
                     "file": "sounds/country/SC_IA_90_guitar_chords_bittersweet_Ebmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Guitar melody (Ebmaj)",
                     "file": "sounds/country/SC_IA_100_guitar_arpeg_nostalgic_high_Bmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Guitar nostalgic (B major)",
                     "file": "sounds/country/SC_IA_105_guitar_chords_jersey_muted_Abmaj.wav"
                 },
                 {
-                    "name": "",
+                    "name": "Family Guitar",
                     "file": "sounds/country/SC_IA_140_guitar_muted_family_alt_Amaj.wav"
+                },
+                {
+                    "name": "Jersey Guitar",
+                    "file": "sounds/country/SC_IA_105_guitar_chords_jersey_muted_Abmaj.wav"
                 }
             ]
         },
-        "HipHop": {
+         {
+            "name": "HipHop",
             "samples": [
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Clean drum",
+                    "file": "sounds/hiphop/KMRBI_RHS5_70_drum_fill_clean.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Vocal Guitar (F major)",
+                    "file": "sounds/hiphop/KMRBI_RHS5_80_acoustic_guitar_vocal_loop_trymybest_Fmaj.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Vocal Give",
+                    "file": "sounds/hiphop/KMRBI_RHS5_90_vocal_female_loop_giving_Amaj.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Just Right Drum",
+                    "file": "sounds/hiphop/KMRBI_RHS5_95_drum_loop_justright.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Synth Stack",
+                    "file": "sounds/hiphop/KMRBI_RHS5_100_synth_stack_loop_crankthatup_D#m.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Tasty Drum",
+                    "file": "sounds/hiphop/KMRBI_RHS5_120_drum_loop_tasty.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Synth passing",
+                    "file": "sounds/hiphop/KMRBI_RHS5_120_synth_stack_loop_passing_Dm.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Safe Loop",
+                    "file": "sounds/hiphop/KMRBI_RHS5_140_songstarter_loop_safe_Bm.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Far from home synth",
+                    "file": "sounds/hiphop/KMRBI_RHS5_157_synth_stack_loop_farfromhome_C#maj.wav"
                 }
             ]
         },
-        "LoFi": {
+        {
+            "name": "LoFi",
             "samples": [
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Marina bass",
+                    "file": "sounds/lofi/OS_LFC_75_electric_bass_guitar_marina_Bm.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart Marina",
+                    "file": "sounds/lofi/OS_LFC_75_songstarter_marina_Bm.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Salt Drum",
+                    "file": "sounds/lofi/OS_LFC_80_drum_loop_salt.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Honey Bass",
+                    "file": "sounds/lofi/OS_LFC_80_electric_bass_guitar_honey_A#m.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart Honey",
+                    "file": "sounds/lofi/OS_LFC_80_songstarter_honey_A#m.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart CRM",
+                    "file": "sounds/lofi/OS_LFC_90_songstarter_cream_Fm.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart Fire",
+                    "file": "sounds/lofi/OS_LFC_90_songstarter_fire_C#m.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Zest Drum",
+                    "file": "sounds/lofi/OS_LFC_130_drum_loop_zest.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart Praise",
+                    "file": "sounds/lofi/OS_LFC_130_songstarter_praise_Dm.wav"
                 }
             ]
         },
-        "Pop": {
+         {
+            "name": "Pop", 
             "samples": [
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Onsen Bass",
+                    "file": "sounds/pop/dp_75_bass_loop_onsen_bass_Gmaj.wav"
+                },
+                {
+                    "name": "Live Bass",
+                    "file": "sounds/pop/dp_75_kit_loop_alone_live_bass_Gmaj.wav"
+                },
+                {
+                    "name": "TwoTime Pluck",
+                    "file": "sounds/pop/dp_90_kit_loop_twotime_arp_pluck_Cmin.wav"
+                },
+                {
+                    "name": "Melodic Pad",
+                    "file": "sounds/pop/dp_90_melodic_loop_cherrypick_pads_Fmaj.wav"
+                },
+                {
+                    "name": "All I Want Drum",
+                    "file": "sounds/pop/dp_117_drum_loop_live_alliwant_full.wav"
+                },
+                {
+                    "name": "All I Want Bass",
+                    "file": "sounds/pop/dp_117_kit_loop_alliwant_bass_Emaj.wav"
+                },
+                {
+                    "name": "Sue Bass",
+                    "file": "sounds/pop/dp_117_kit_loop_sue_bass_Emaj.wav"
+                },
+                {
+                    "name": "Laidback Drum",
+                    "file": "sounds/pop/dp_130_drum_loop_laidback_full.wav"
+                },
+                {
+                    "name": "Overdrive Drum",
+                    "file": "sounds/pop/dp_130_drum_loop_live_overdrive.wav"
+                },
+                {
+                    "name": "Arp Pluck",
+                    "file": "sounds/pop/dp_90_kit_loop_twotime_arp_pluck_Cmin.wav"
                 }
             ]
         },
-        "Soul": {
+        {
+            "name": "Soul",
             "samples": [
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstarter Hedge",
+                    "file": "sounds/soul/SLS_CSP_65_songstarter_soul_hedges_Bmin.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Soul Slander",
+                    "file": "sounds/soul/SLS_CSP_73_electric_guitar_chords_clean_soul_slander_Bbmaj.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Bass Theif",
+                    "file": "sounds/soul/SLS_CSP_78_electric_bass_soul_thief_Cmin.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Grand Piano Chords",
+                    "file": "sounds/soul/SLS_CSP_78_grand_piano_chords_lofi_soul_thief_Cmin.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Filtred Reverb",
+                    "file": "sounds/soul/SLS_CSP_80_vocals_filtered_chords_reverb_soul_lofi_bonafide_Dmaj.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "RNB Drum",
+                    "file": "sounds/soul/SLS_CSP_85_drum_kit_rnb_daughter.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart Bonafide",
+                    "file": "sounds/soul/SLS_CSP_90_songstarter_soul_bonafide_Dmaj.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart Needyou",
+                    "file": "sounds/soul/SLS_CSP_92_songstarter_soul_needyou_Bbmin.wav"
                 },
                 {
-                    "name": "",
-                    "file": ""
+                    "name": "Songstart reset",
+                    "file": "sounds/soul/SLS_CSP_94_songstarter_soul_reset_C#maj.wav"
                 }
             ]
         }
-    }
+    ]
 }

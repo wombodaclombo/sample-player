@@ -12,10 +12,11 @@ def init():
     password_check()
 
 def main_program():
+   global active_genre
    user_name()
    load_genres()
    prompt_genre_select()
-   prompt_sample_select()
+   prompt_sample_select(active_genre)
 
 
 def load_genres():
@@ -23,10 +24,10 @@ def load_genres():
     try:
         with open('genres.json', 'r') as file:
             data = json.load(file)
+            genres = data.get("genres", [])
             print("Here are the genres you can preview:\n")
-            genres = list(data.get("genres"))
             for i, genre in enumerate(genres):
-                print(i, genre)
+                print(f"{i}: {genre['name']}")
     except FileNotFoundError:
         print("File not found.")
     except json.JSONDecodeError:
@@ -70,12 +71,12 @@ def user_name():
 
 def prompt_genre_select():
     global genres, active_genre
-    genre_selection = input("What would you like to listen to? (Enter a genre number)")
+    genre_selection = input("What would you like to listen to? (Enter a genre number): ")
     
     if genre_selection.isdigit() and int(genre_selection) < len(genres):
         active_genre = genres[int(genre_selection)]
     else:
-        print("Please choose a number 0-9")
+        print("Invalid selection. Try again.")
         prompt_genre_select()
 
 def prompt_sample_select(genre):
