@@ -144,3 +144,12 @@ Installing collected packages: pygame
 Successfully installed pygame-2.6.1
 
 I fixed this problem by switiching interpreter views to hopefully reload and give the interpreter a chance to understand the code
+
+
+## Bug 9: genres list length returned 0 when it shouldnt
+
+I didnt mark the "genres" variable as global in some functions. because i did not mark the variable as global when i assigned the list of genres to it, i only set the local copy not the global copy. Due to this misktake the 'len' function returned 0 becausethe global copy is still 0. the proper way to mark these variables as globalis : 
+
+```python
+global genres
+``` 

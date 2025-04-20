@@ -15,13 +15,16 @@ def main_program():
    user_name()
    load_genres()
    prompt_genre_select()
+   prompt_sample_select()
+
 
 def load_genres():
+    global genres
     try:
         with open('genres.json', 'r') as file:
             data = json.load(file)
             print("Here are the genres you can preview:\n")
-            genres = data.get("genres")
+            genres = list(data.get("genres"))
             for i, genre in enumerate(genres):
                 print(i, genre)
     except FileNotFoundError:
@@ -66,15 +69,20 @@ def user_name():
         user_name()
 
 def prompt_genre_select():
+    global genres, active_genre
     genre_selection = input("What would you like to listen to? (Enter a genre number)")
-    print('genre_selection.isdigit()', genre_selection.isdigit())
-    print('int(genre_selection)', int(genre_selection))
-    print('len(genres)', len(genres))
-    if genre_selection.isdigit() and not int(genre_selection) > len(genres):
+    
+    if genre_selection.isdigit() and int(genre_selection) < len(genres):
         active_genre = genres[int(genre_selection)]
     else:
         print("Please choose a number 0-9")
         prompt_genre_select()
+
+def prompt_sample_select(genre):
+    if not genre:
+        raise Exception("Genre doesn't exist.")
+    for index, sample in enumerate(genre["samples"]):
+        print(f"{index} {sample['name']}")
 
 def play_sample(path):
     if not path or not os.path.exists(path): 
