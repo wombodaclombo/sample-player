@@ -1,4 +1,4 @@
-# Bugs log
+# Bug log
 
 This is where i will track my bugs and add their resolutions. 
 
@@ -177,3 +177,7 @@ I was trying to display a list of genres. I was working on my genres list when i
 genres = list(data.get("genres"))
 ```
 but it gave me a list of genre string names inteased of a list of genre objects. To fix it we removed the wrapping list function.
+
+
+
+

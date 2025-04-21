@@ -20,3 +20,6 @@ python main.py
 - when selected these samples will play a sound 
 - to select a sample, the user will enter the number of the sample and the sample will play
 
+## Flowchart
+
+![Flowchart](flow-chart.png)

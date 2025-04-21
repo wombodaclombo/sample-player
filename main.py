@@ -1,7 +1,14 @@
+# file name: main.py
+#author: Leo Sanders
+# date: 4/21/2025
+#Description: This project aims  to become a functioning audio player which plays music samples from certain genres when selected. 
+# The program loads data from a Json file and then ships it to the program to be processed.
+
 import json
 import os
 import platform
 import pygame
+from genre import Genre
 
 username = "User"
 genres = []
@@ -9,12 +16,24 @@ active_genre = None
 
 
 def init():
-    '''Welcomes the user and initiates the password check.'''
+    '''
+    Welcomes the user and initiates the password check.
+    
+    parameters: none
+    
+    returns none:
+    '''
     print("Welcome to Sample Player!")
     password_check()
 
 def main_program():
-   '''Calls other functions to control the flow of the total program.'''
+   '''
+   Calls other functions to control the flow of the total program.
+   
+   parameters none
+
+   returns none
+   '''
    global active_genre
    user_name()
    load_genres()
@@ -23,12 +42,19 @@ def main_program():
 
 
 def load_genres():
-    '''loads genre information from jsn file which contains genre data'''
+    '''loads genre information from jsn file which contains genre data
+    
+    returns none
+
+    parameters none
+    
+    '''
     global genres
     try:
         with open('genres.json', 'r') as file:
             data = json.load(file)
-            genres = data.get("genres", [])
+            for genre in data.get("genres", []):
+                genres.append(Genre(genre["name"], genre["samples"]))
             
     except FileNotFoundError:
         print("File not found.")
@@ -80,11 +106,10 @@ def prompt_genre_select():
     '''Asks user to select genre and draws data from genres.json.'''
     global genres, active_genre
     while True:
-        genre_selection = input("What would you like to listen to? (Enter a genre number or 'exit' to exit): ")
         print("Here are the genres you can preview:\n")
         for i, genre in enumerate(genres):
-            print(f"{i}: {genre['name']}")
-        clear_console()
+            print(f"{i}: {genre.name}")
+        genre_selection = input("What would you like to listen to? (Enter a genre number or 'exit' to exit): ")
         if genre_selection == "exit":
             break
         if genre_selection.isdigit() and int(genre_selection) < len(genres):
@@ -100,7 +125,7 @@ def prompt_sample_select(genre):
         raise Exception("Genre doesn't exist.")
     while True:
         print("Please select a sample number:\n")
-        for index, sample in enumerate(genre["samples"]):
+        for index, sample in enumerate(genre.samples):
             print(f"{index} {sample['name']}")
         selection = input("\nYour selection (or type exit to quit): ")
         if selection == "exit":
@@ -109,7 +134,7 @@ def prompt_sample_select(genre):
         if not selection.isdigit():
             raise Exception("No sample here!\n")
         index = int(selection)
-        samples = genre.get("samples")
+        samples = genre.samples
         path = samples[index].get("file")
         play_sample(path)
 
@@ -126,3 +151,4 @@ def play_sample(path):
         pygame.time.Clock().tick(10)
 
 init()
+
